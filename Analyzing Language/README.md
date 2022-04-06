@@ -57,3 +57,8 @@ These dependencies can lead to error propagation. An error in an earlier process
 #### What are annotations?
 
 Metadata providing linguistic information about the content. The labels are annotated by linguistic experts. Annotated corpora are very important resources for natural language processing. They are often not available for languages that are of less economic interest.
+
+## References
+
+- Jacob Eisenstein (2018) - Natural Language Processing Notes (https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf) <br/>
+- Vrije Universiteit Amsterdam NLP Lecture Notes
