@@ -1,12 +1,13 @@
-# Implement four baselines for the task.
-# Majority baseline: always assigns the majority class of the training data
-# Random baseline: randomly assigns one of the classes. Make sure to set a random seed and average the accuracy over 100 runs.
-# Length baseline: determines the class based on a length threshold
-# Frequency baseline: determines the class based on a frequency threshold
+# Implement four baselines for the task. Majority baseline: always assigns the majority class of the training data
+# Random baseline: randomly assigns one of the classes. Make sure to set a random seed and average the accuracy over
+# 100 runs. Length baseline: determines the class based on a length threshold Frequency baseline: determines the
+# class based on a frequency threshold
 
 from model.data_loader import DataLoader
 
-# Each baseline returns predictions for the test data. The length and frequency baselines determine a threshold using the development data.
+# Each baseline returns predictions for the test data. The length and frequency baselines determine a threshold using
+# the development data.
+
 
 def majority_baseline(train_sentences, train_labels, testinput, testlabels):
     predictions = []
