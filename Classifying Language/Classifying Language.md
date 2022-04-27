@@ -78,3 +78,8 @@ Recurrent neural networks (RNNs) are sensitive to word order and can process arb
 
 Long short-term memory networks (LSTMs) are special recurrent neural networks. They have an additional context layer and use three types of gates to control the flow of information such as forget gate, add gate and output gate. The gates are implemented through the use of additional weights that operate
 sequentially on the input, and the previous hidden layer and previous context layers.
+
+## References
+
+- Jacob Eisenstein (2018) - Natural Language Processing Notes (https://github.com/jacobeisenstein/gt-nlp-class/blob/master/notes/eisenstein-nlp-notes.pdf) <br/>
+- Vrije Universiteit Amsterdam NLP Lecture Notes
