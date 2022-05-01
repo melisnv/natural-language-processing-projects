@@ -157,3 +157,8 @@ During fine-tuning, pairs of labeled sentences from the supervised training data
 • Bidirectional encoders can be used to generate contextualized representations of input embeddings using the entire input context.
 • Pretrained language models based on bidirectional encoders can be learned using a masked language model objective where a model is trained to guess the missing information from an input.
 • Pretrained language models can be fine-tuned for specific applications by adding lightweight classifier layers on top of the outputs of the pretrained model.
+
+## References
+
+- Daniel Jurafsky & James H. Martin. Speech and Language Processing January 12, 2022. <br/>
+- Vrije Universiteit Amsterdam Natural Language Processing Technology Course Notes
