@@ -203,5 +203,3 @@ entity tagging is also central to tasks involving building semantic representati
 The standard approach to sequence labeling for a span-recognition problem like NER is `BIO tagging` (_Ramshaw and Marcus, 1995_). This is a method that allows us to treat NER like a _word-by-word sequence labeling task_, via tags that capture both the boundary and the named entity type. Figure 8.7 shows the same excerpt represented with BIO tagging, as well as variants called IO tagging and BIOES tagging. In `BIO tagging` we label any token that _begins a span of interest_ with the label **B**, tokens that _occur inside a span_ are tagged with an **I**, and any tokens _outside of any span of interest_ are labeled **O**. While there is only one O tag, we’ll have distinct B and I tags for each named entity class.
 
 ![BIO-Tagging](https://firebasestorage.googleapis.com/v0/b/birthday-react-6eca4.appspot.com/o/Natural-Language-Processing%2FWeek%201%20%3A%20Analyzing%20Language%2Fbio.jpg?alt=media&token=61a60318-75ef-4451-951e-b12709813465)
-
-# 8.8 Summary
