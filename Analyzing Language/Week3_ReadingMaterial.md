@@ -114,3 +114,26 @@ The power of pretrained language models lies in their ability to extract general
 ### 11.3.1 Sequence Classification
 
 Sequence classification applications often represent an input sequence with a single consolidated representation. With RNNs, we used the hidden layer associated with the final input element to stand for the entire sequence. A similar approach is used with transformers. An additional vector is added to the model to stand for the entire sequence. This vector is sometimes called the sentence embedding since it refers to the entire sequence.
+
+## 9.7 Self-Attention Networks: Transformers
+
+While the addition of gates allows LSTMs to handle more distant information than RNNs, they don’t completely solve the underlying problem: passing information through an extended series of recurrent connections leads to information loss and difficulties in training. Moreover, the inherently sequential nature of recurrent networks makes it hard to do computation in parallel. These considerations led to the development of `transformers`.<br>
+
+Transformers map sequences of _input_ vectors _(x_1 ... x_n)_ to sequences of _output_ vectors _(y_1 ... y_n_) of the same length. Transformers are made up of stacks of transformer blocks, which are multilayer networks made by combining simple linear layers, feedforward networks, and self-attention layers, the key innovation of transformers. `Self-attention` allows a network to directly extract and use information from arbitrarily large contexts without the need to pass it through intermediate recurrent connections as in RNNs.
+
+![Attention Layer](https://firebasestorage.googleapis.com/v0/b/birthday-react-6eca4.appspot.com/o/Natural-Language-Processing%2Fattn.jpg?alt=media&token=976a70c6-bab3-406e-8c5f-3bf907a67973)
+
+The simplest form of comparison between elements in a self-attention layer is a _dot product_. But transformers allow us to create a more sophisticated way of representing how words can contribute to the representation of longer inputs. Consider the three different roles that each input embedding plays during the course of the attention process.<br>
+
+• As the current focus of attention when being compared to all of the other preceding inputs. We’ll refer to this role as a **query**.<br>
+• In its role as a preceding input being compared to the current focus of attention. We’ll refer to this role as a **key**.<br>
+• And finally, as a **value** used to compute the output for the current focus of
+attention.<br>
+
+### 9.7.1 Transformer Blocks
+
+The self-attention calculation lies at the core of what’s called a transformer block, which, in addition to the self-attention layer, includes additional feedforward layers, residual connections, and normalizing layers. The input and output dimensions of these blocks are matched so they can be stacked just as was the case for stacked RNNs. In deep networks, `residual connections` are connections that pass information from a lower layer to a higher layer without going through the intermediate layer. Allowing information from the activation going forward and the gradient going backwards to skip a layer improves learning and gives higher level layers direct access to information from lower layers. Residual connections in transformers are implemented by added a layer’s input vector to its output vector before passing it forward. In the transformer block shown in **Fig. 9.18**, residual connections are used with both the attention and feedforward sublayers. These summed vectors are then normalized using layer normalization.
+
+![Transformer Block](https://firebasestorage.googleapis.com/v0/b/birthday-react-6eca4.appspot.com/o/Natural-Language-Processing%2Fblock.jpg?alt=media&token=2d1887b6-fbf1-4906-8a8a-814fae07b6d3)
+
+`Layer normalization` (or layer norm) is one of many forms of normalization that can be used to improve training performance in deep neural networks by keeping the values of a hidden layer in a range that facilitates gradient-based training. Layer norm is a variation of the standard score, or z-score, from statistics applied to a single hidden layer.
