@@ -324,3 +324,19 @@ The most commonly used such extension to RNNs is the `Long short-term memory` (_
 The gates in an LSTM share a common design pattern; each consists of a feedforward layer, followed by a sigmoid activation function, followed by a pointwise multiplication with the layer being gated. The choice of the sigmoid as the activation function arises from its tendency to push its outputs to either 0 or 1. Combining this with a pointwise multiplication has an effect similar to that of a binary mask. Values in the layer being gated that align with values near 1 in the mask are passed through nearly unchanged; values corresponding to lower values are essentially erased.
 
 The first gate we’ll consider is the `forget gate`. The purpose of this gate to delete information from the context that is no longer needed. The forget gate computes a weighted sum of the previous state’s hidden layer and the current input and passes that through a sigmoid. This mask is then multiplied element-wise by the context vector to remove the information from context that is no longer required. The next task is compute the actual information we need to extract from the previous hidden state and current inputs—the same basic computation we’ve been using for all our recurrent networks. Next, we generate the mask for the add gate to select the information to add to the current context. Given the appropriate weights for the various gates, an LSTM accepts as input the context layer, and hidden layer from the previous time step, along with the current input vector. It then generates updated context and hidden vectors as output. The hidden layer, ht , can be used as input to subsequent layers in a stacked RNN, or to generate an output for the final layer of a network.
+
+### What is the challenge of sentence segmentation regarding the period character “.” and how can it be addressed?
+
+The challenge is that it's ambitious (like _Mr._ and _Mrs._) and the solution is machine learning to decide if it's a part of a sentence or the end.
+
+### What is morphological parsing?
+
+It is parsing a word such as _cats_ into two morphemes _cat_ and _s_.
+
+### How can neologisms(a newly coined word or expression) be created?
+
+Neologisms are often formed by combining existing words or by giving words new and unique _suffixes_ or _prefixes_. (by combining morphemes). Like **“hangry”** is a _neologism_, it’s just combining things with meanings
+
+### 3 examples of language varieties?
+
+Language variety is a general term for any distinctive form of a language or linguistic expression. Linguists commonly use language variety (or simply variety) as a cover term for any of the overlapping subcategories of a language, including dialect, register, jargon,idiolect, and syntactic variation etc.
